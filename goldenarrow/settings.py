@@ -26,7 +26,7 @@ SECRET_KEY = "l4f89u1299#qgjqaanm#ov(&@c3@%8an=x@!fniqn6e+ax@qlr"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://goldenarrow.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["https://goldenarrow.herokuapp.com/", "127.0.0.1"]
 
 
 # Application definition
