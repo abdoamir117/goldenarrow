@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Create a new Job</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div class="mt-4">
+        <label class="form-label" for="title">What is the job?</label>
+        <input class="form-control" type="text" name="title" id="title" required>
+    </div>
+
+    <div class="mt-4">
+        <label class="form-label" for="location">Where is the job located?</label>
+        <input class="form-control" type="text" name="location" id="location" required>
+    </div>
+    
+    <div class="mt-4">
+        <label class="form-label" for="description">What are the responsibilities of this position?</label>
+        <small class="text-muted">Use semicolon (<span style="font-size: 1.5rem;">,</span>) to separate each point.</small>
+        <textarea class="form-control" name="description" id="description" cols="30" rows="10" required></textarea>
+    </div>
+
+    <div class="mt-4">
+        <label class="form-label" for="requirement">What are the qualification for the job?</label>
+        <small class="text-muted">Use semicolon (<span style="font-size: 1.5rem;">,</span>) to separate each point.</small>
+        <textarea class="form-control" name="requirement" id="requirement" cols="30" rows="10" required></textarea>
+    </div>
+
+    <div class="mt-4 justify-between">
+        <a class="btn btn-secondary" href="{% url 'jobs' %}">Back</a>
+        <button class="btn btn-primary" type="submit">Add Job</button>
+    </div>
+</form>
+{% endblock %}

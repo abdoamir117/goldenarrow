@@ -1,0 +1,35 @@
+@use '_variables' as *;
+
+.btn {
+    display: block;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    padding: .325rem 1rem;
+    border-radius: .25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+@each $key, $value in $theme-colors-map {
+    .btn-#{$key} {
+        color: white;
+        background-color: $value;
+    }
+}
+
+@each $key, $value in $theme-colors-map {
+    .btn-outline-#{$key} {
+        color: $value;
+        background-color: $white;
+
+        &:hover {
+            color: $white;
+            background-color: $value;
+        }
+    }
+}

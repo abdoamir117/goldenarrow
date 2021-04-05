@@ -1,0 +1,122 @@
+@use '_variables' as *;
+
+.footer {
+    height: 2.5rem;
+    background-color: #eee;
+    display: grid;
+    place-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+}
+
+@each $key, $value in $heights-map {
+    .h-#{$key} {
+        height: $value;
+    }
+}
+
+@each $key, $value in $widths-map {
+    .w-#{$key} {
+        width: $value;
+    }
+}
+
+@each $key, $value in $display-font-sizes {
+    .display-#{$key} {
+        font-size: $value;
+    }
+}
+
+.center-content {
+    display: grid;
+    place-content: center;
+}
+
+.justify-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.justify-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: gray;
+}
+
+@each $key, $value in $spacers {
+    .m-#{$key} {
+        margin: $value;
+    }
+
+    .mt-#{$key} {
+        margin-top: $value;
+    }
+
+    .mb-#{$key} {
+        margin-bottom: $value;
+    }
+
+    .mr-#{$key} {
+        margin-right: $value;
+    }
+
+    .ml-#{$key} {
+        margin-left: $value;
+    }
+
+    .mx-#{$key} {
+        margin-left: $value;
+        margin-right: $value;
+    }
+
+    .my-#{$key} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+}
+
+@each $key, $value in $spacers {
+    .p-#{$key} {
+        padding: $value;
+    }
+
+    .pt-#{$key} {
+        padding-top: $value;
+    }
+
+    .pb-#{$key} {
+        padding-bottom: $value;
+    }
+
+    .pr-#{$key} {
+        padding-right: $value;
+    }
+
+    .pl-#{$key} {
+        padding-left: $value;
+    }
+
+    .px-#{$key} {
+        padding-left: $value;
+        padding-right: $value;
+    }
+
+    .py-#{$key} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+}
+
+.pagination {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
