@@ -1,0 +1,1 @@
+web: gunicorn app.goldenarrow.wsgi --log-file -
