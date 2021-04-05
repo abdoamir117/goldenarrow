@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} {{ title }} {% endblock %}
 
 {% block content %}
 <h1>{{ title }}</h1>
+<div>
+    <img src="{% static 'images/ok_hand_2.png' %}" alt="" style="width: 200px; display: block;">
+    <img src="{% static 'images/thumbs_up.jpeg' %}" alt="" style="width: 200px; display: block;">
+    <img src="{% static 'images/strawberry.png' %}" alt="" style="width: 200px; display: block;">
+</div>
 {% endblock %}
