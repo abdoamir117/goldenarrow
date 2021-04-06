@@ -30,12 +30,16 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "CHANGEMEPLEASE")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get("MODE") == "production":
-    DEBUG = True
+    DEBUG = False
 else:
     DEBUG = True
 
 # ALLOWED_HOSTS = ["https://goldenarrow.herokuapp.com/", "127.0.0.1"]
-ALLOWED_HOSTS = ["https://goldenarrow.herokuapp.com/", "goldenarrow.herokuapp.com"]
+ALLOWED_HOSTS = [
+    "https://goldenarrow.herokuapp.com/",
+    "goldenarrow.herokuapp.com",
+    "127.0.0.1",
+]
 
 
 # Application definition
