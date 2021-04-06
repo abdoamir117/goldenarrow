@@ -18,8 +18,8 @@
         {% endif %}
         <h1>Jobs</h1>
     </div>
-    <div class="col-6">
-        <p>To apply, email us at <a href="mailto:goldenarrow@example.com">goldenarrow@example.com</a></p>
+    <div class="col-6 text-right">
+        <p>To apply, email us at <a href="mailto:carrer@goldenarrow.sd">carrer@goldenarrow.sd</a></p>
         <p class="text-muted">Please specify the position you're apply to in
             your email.</p>
     </div>
@@ -33,33 +33,37 @@
 <p>There are no jobs available at the moment.<br>Please check again later.</p>
 {% endif %}
 
-{% if page_obj %}
-<ul class="list-group">
-    {% for job in page_obj %}
-    <li class="list-group-item">
+{% for job in page_obj %}
+<div class="card mt-3">
+    <div class="card-body">
         <div class="card-title">{{ job.title }}</div>
-        <div class="card-subtitle">Location: {{ job.location }}</div>
+        <div class="card-text">{{ job.location }}</div>
+
         {% if job.description %}
-        <div>
-            <b>Responsibilities:</b>
+        <div class="card-text">Responsibilities:</div>
+        <div class="card-text">
             <ul>
                 {% for item in job.descriptions %}
                 <li>{{ item }}</li>
                 {% endfor %}
             </ul>
-            {% endif %}
-            {% if job.requirement %}
-            <b>Qualifications</b>
+        </div>
+        {% endif %}
+
+        {% if job.requirement %}
+        <div class="card-text">Qualifications</div>
+        <div class="card-text">
             <ul>
                 {% for item in job.requirements %}
                 <li>{{ item }}</li>
                 {% endfor %}
             </ul>
-            {% endif %}
         </div>
-    </li>
-    {% endfor %}
-</ul>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
 <div class="container mt-3">
     <div class="pagination">
         {% if page_obj.has_previous %}
@@ -85,7 +89,6 @@
         </li>
         {% endif %}
     </div>
-    {% endif %}
 </div>
 
 {% endblock content %}
