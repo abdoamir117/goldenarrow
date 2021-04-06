@@ -39,6 +39,7 @@ ALLOWED_HOSTS = [
     "https://goldenarrow.herokuapp.com/",
     "goldenarrow.herokuapp.com",
     "127.0.0.1",
+    "localhost",
 ]
 
 

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if request.user.is_staff %}
+<!-- {% if request.user.is_staff %}
 <a class="btn" href="{% url 'add_job' %}" style="display: inline-block;margin: 1rem 0;">Create a new job</a>
 {% endif %}
 <div style="display: flex; align-items: center; justify-content: space-between;">
@@ -9,6 +9,19 @@
     <div>
         <p>To apply, email us at <a href="mailto:goldenarrow@example.com">goldenarrow@example.com</a></p>
         <p class="text-muted" style="font-size: .9rem;text-align: right;">Please specify the position you're apply to in your email.</p>
+    </div>
+</div> -->
+<div class="row mt-3">
+    <div class="col-6">
+        {% if request.user.is_staff %}
+        <a class="btn btn-outline-primary mb-2" href="{% url 'add_job' %}">Create a new job</a>
+        {% endif %}
+        <h1>Jobs</h1>
+    </div>
+    <div class="col-6">
+        <p>To apply, email us at <a href="mailto:goldenarrow@example.com">goldenarrow@example.com</a></p>
+        <p class="text-muted">Please specify the position you're apply to in
+            your email.</p>
     </div>
 </div>
 
@@ -26,6 +39,7 @@
     <li class="list-group-item">
         <div class="card-title">{{ job.title }}</div>
         <div class="card-subtitle">Location: {{ job.location }}</div>
+        {% if job.description %}
         <div>
             <b>Responsibilities:</b>
             <ul>
@@ -33,33 +47,45 @@
                 <li>{{ item }}</li>
                 {% endfor %}
             </ul>
+            {% endif %}
+            {% if job.requirement %}
             <b>Qualifications</b>
             <ul>
                 {% for item in job.requirements %}
                 <li>{{ item }}</li>
                 {% endfor %}
             </ul>
+            {% endif %}
         </div>
     </li>
     {% endfor %}
 </ul>
-<div class="pagination">
-    <span class="step-links">
+<div class="container mt-3">
+    <div class="pagination">
         {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        <li class="page-item">
+            <a class="page-link" href="?page=1">&laquo; first</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
+        </li>
         {% endif %}
 
-        <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-        </span>
+        <li class="page-item">
+            <a class="page-link" href="#">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a>
+
+        </li>
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        </li>
         {% endif %}
-    </span>
-</div>    
-{% endif %}
+    </div>
+    {% endif %}
+</div>
 
 {% endblock content %}
