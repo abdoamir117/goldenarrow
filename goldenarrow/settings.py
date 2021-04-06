@@ -35,7 +35,7 @@ else:
     DEBUG = True
 
 # ALLOWED_HOSTS = ["https://goldenarrow.herokuapp.com/", "127.0.0.1"]
-ALLOWED_HOSTS = ["https://goldenarrow.herokuapp.com/"]
+ALLOWED_HOSTS = ["https://goldenarrow.herokuapp.com/", "goldenarrow.herokuapp.com"]
 
 
 # Application definition
