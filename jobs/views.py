@@ -38,11 +38,15 @@ def add_job(request):
         location = request.POST["location"]
         description = request.POST["description"]
         requirement = request.POST["requirement"]
+        starting_date = request.POST["starting_date"]
+        closing_date = request.POST["closing_date"]
         Job.objects.create(
             title=title,
             location=location,
             description=description,
             requirement=requirement,
+            starting_date=starting_date,
+            closing_date=closing_date,
         )
         return redirect("jobs")
     context = {

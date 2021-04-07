@@ -9,6 +9,8 @@ class Job(models.Model):
     requirement = models.TextField(help_text="", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    starting_date = models.DateField(null=True, blank=True)
+    closing_date = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return self.title
