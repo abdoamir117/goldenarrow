@@ -36,26 +36,33 @@
 {% for job in page_obj %}
 <div class="card mt-3">
     <div class="card-body">
-        <div class="card-title">{{ job.title }}</div>
-        <div class="card-text">{{ job.location }}</div>
+        <div>
+            <b style="text-transform: uppercase;">JOB</b>
+            <h5 class="card-title">{{ job.title }}</h5>
+        </div>
+
+        <div>
+            <b style="text-transform: uppercase;">LOCATION</b>
+            <h5 class="card-text">{{ job.location }}</h5>
+        </div>
 
         {% if job.description %}
-        <div class="card-text">Responsibilities:</div>
-        <div class="card-text">
-            <ul>
+        <div class="card-text mt-3">
+            <b class="card-text" style="text-transform: uppercase;">Responsibilities</b>
+            <ul class="list-group">
                 {% for item in job.descriptions %}
-                <li>{{ item }}</li>
+                <li class="list-group-item border-0">{{ item }}</li>
                 {% endfor %}
             </ul>
         </div>
         {% endif %}
 
         {% if job.requirement %}
-        <div class="card-text">Qualifications</div>
-        <div class="card-text">
-            <ul>
+        <div class="card-text mt-3">
+            <b class="card-text" style="text-transform: uppercase;">Qualifications</b>
+            <ul class="list-group">
                 {% for item in job.requirements %}
-                <li>{{ item }}</li>
+                <li class="list-group-item border-0">{{ item }}</li>
                 {% endfor %}
             </ul>
         </div>

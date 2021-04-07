@@ -17,7 +17,7 @@ def home(request):
 
 
 def jobs(request):
-    jobs = Job.objects.all()
+    jobs = Job.objects.order_by("-updated_at")
     paginator = Paginator(jobs, 30)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
