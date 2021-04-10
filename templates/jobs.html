@@ -59,22 +59,24 @@
         {% if job.description %}
         <div class="card-text mt-3">
             <b class="text-primary" class="card-text" style="text-transform: uppercase;">Responsibilities</b>
-            <ul class="list-group">
+            <!-- <ul class="list-group">
                 {% for item in job.descriptions %}
                 <li class="list-group-item border-0">{{ item }}</li>
                 {% endfor %}
-            </ul>
+            </ul> -->
+            <pre>{{ job.description }}</pre>
         </div>
         {% endif %}
 
         {% if job.requirement %}
         <div class="card-text mt-3">
             <b class="text-primary" class="card-text" style="text-transform: uppercase;">Qualifications</b>
-            <ul class="list-group">
+            <!-- <ul class="list-group">
                 {% for item in job.requirements %}
                 <li class="list-group-item border-0">{{ item }}</li>
                 {% endfor %}
-            </ul>
+            </ul> -->
+            <pre>{{ job.requirement }}</pre>
         </div>
         {% endif %}
         <p class="mt-3">Posted at {{ job.created_at }}</p>
