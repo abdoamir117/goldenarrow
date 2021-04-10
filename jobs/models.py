@@ -15,10 +15,10 @@ class Job(models.Model):
     def __str__(self):
         return self.title
 
-    @property
-    def descriptions(self):
-        return self.description.strip().split(",")
+    # @property
+    # def descriptions(self):
+    #     return self.description.strip().split(",")
 
-    @property
-    def requirements(self):
-        return self.requirement.strip().split(",")
+    # @property
+    # def requirements(self):
+    #     return self.requirement.strip().split(",")
